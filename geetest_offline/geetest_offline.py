@@ -224,11 +224,11 @@ def query_keyword(session, keyword, token):
     if not token:
         token = get_main(session)
         if not token:
-            return None
+            return None,None
 
     validate = get_validate(session, keyword)
     if not validate:
-        return None
+        return None,None
 
     return post_search(session, validate, keyword, token)
 
